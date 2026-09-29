@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Política de privacidade para o uso pessoal do aplicativo OAuth Arca Backup.">
+  <title>Política de privacidade — Arca Backup</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f4ef; color: #1a2925; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.65; }
+    a { color: #145d50; text-underline-offset: .2em; }
+    a:hover { color: #0c4037; }
+    a:focus-visible { outline: 3px solid #b76828; outline-offset: 3px; border-radius: 2px; }
+    .wrap { width: min(100% - 2rem, 70rem); margin-inline: auto; }
+    .site-header { background: #123f37; color: #fff; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.2rem; }
+    .brand { color: #fff; font-weight: 750; letter-spacing: -.025em; font-size: 1.18rem; text-decoration: none; }
+    .site-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .site-nav a { color: #fff; font-size: .95rem; }
+    .hero { padding: clamp(2.5rem, 6vw, 4.3rem) 0 2rem; border-bottom: 1px solid #d8ded7; }
+    .eyebrow { margin: 0 0 .7rem; color: #576b62; font-size: .78rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 18ch; margin: 0 0 1rem; font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.07; letter-spacing: -.05em; }
+    .lead { max-width: 42rem; margin: 0; color: #42534b; font-size: 1.13rem; }
+    .content { max-width: 52rem; padding-block: 2.4rem 3.5rem; }
+    h2 { margin: 2.1rem 0 .65rem; font-size: 1.4rem; line-height: 1.25; letter-spacing: -.025em; }
+    h2:first-child { margin-top: 0; }
+    p { margin: .55rem 0 1rem; }
+    ul, ol { padding-left: 1.4rem; }
+    li { margin-block: .45rem; }
+    code { padding: .1em .3em; border-radius: .2rem; background: #e7ece7; overflow-wrap: anywhere; }
+    .back { display: inline-block; margin-top: 1.3rem; font-weight: 700; }
+    footer { padding-block: 1.5rem 2rem; border-top: 1px solid #d8ded7; color: #52645a; font-size: .94rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 700px) { .header-inner { align-items: flex-start; flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Arca Backup</a>
+      <nav class="site-nav" aria-label="Navegação principal"><a href="index.html">Página inicial</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero wrap">
+      <p class="eyebrow">Última revisão · 28 de setembro de 2026</p>
+      <h1>Política de privacidade</h1>
+      <p class="lead">Esta política descreve o uso pessoal previsto do cliente OAuth Arca Backup com rclone e Google Drive. A conexão e a cópia externa ainda não foram validadas para recuperação.</p>
+    </div>
+
+    <div class="content wrap">
+      <section aria-labelledby="finalidade">
+        <h2 id="finalidade">Finalidade</h2>
+        <p>O Arca Backup foi criado para autorizar o rclone a copiar para o Google Drive pessoal do responsável um conjunto de backup previamente criptografado pelo Déjà Dup. Se uma recuperação for necessária, o conjunto poderá ser baixado para restauração pelo Déjà Dup. A cópia externa e a restauração a partir dela ainda precisam de teste; esta política não afirma que já estejam disponíveis.</p>
+      </section>
+
+      <section aria-labelledby="acesso">
+        <h2 id="acesso">Acesso solicitado à conta Google</h2>
+        <p>O escopo previsto é somente <code>https://www.googleapis.com/auth/drive.file</code>. Esse escopo limita o acesso do aplicativo aos arquivos e pastas que ele próprio criar no Drive. Não está previsto acesso geral a todos os arquivos da conta.</p>
+      </section>
+
+      <section aria-labelledby="armazenamento">
+        <h2 id="armazenamento">Onde ficam os dados</h2>
+        <ul>
+          <li>O conjunto criptografado pelo Déjà Dup permanece no armazenamento local; cópias feitas por este uso do rclone serão guardadas na conta Google pessoal do responsável pelo aplicativo.</li>
+          <li>Após uma autorização futura, o rclone armazenará o token de acesso no arquivo de configuração do próprio computador. O conteúdo desse arquivo deve ficar restrito ao usuário local. Estas páginas não recebem o token.</li>
+          <li>Estes arquivos de página são estáticos: não têm formulário, login, código de rastreamento ou dependências externas. Se publicadas, estas páginas serão hospedadas pelo GitHub Pages. O site estático não recebe tokens nem arquivos do backup. O GitHub poderá processar registros técnicos de acesso conforme suas próprias condições.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="controle">
+        <h2 id="controle">Revogação e exclusão</h2>
+        <ol>
+          <li>Para revogar a autorização, acesse as conexões de aplicativos de terceiros na sua Conta Google, selecione Arca Backup, confira os detalhes e escolha remover o acesso. Revogar o acesso impede novos acessos do aplicativo, mas não apaga automaticamente os arquivos já guardados no Drive.</li>
+          <li>Para excluir as cópias remotas, localize no Google Drive os arquivos e pastas criados para este backup, mova apenas os itens desejados para a lixeira e, se quiser exclusão definitiva, exclua esses itens da lixeira. Confira antes se possui outra cópia recuperável.</li>
+        </ol>
+        <p>Não há política de exclusão automática da cópia remota configurada nesta etapa.</p>
+      </section>
+
+      <section aria-labelledby="contato">
+        <h2 id="contato">Contato</h2>
+        <p>Para dúvidas sobre o Arca Backup e esta política, escreva para <a href="mailto:arca.fst@gmail.com">arca.fst@gmail.com</a>.</p>
+      </section>
+
+      <a class="back" href="index.html">← Voltar à página inicial</a>
+    </div>
+  </main>
+
+  <footer><div class="wrap"><span>Arca Backup · uso pessoal</span><a href="index.html">Página inicial</a></div></footer>
+</body>
+</html>

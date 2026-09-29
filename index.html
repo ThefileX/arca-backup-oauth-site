@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Arca Backup: apresentação de um aplicativo OAuth pessoal para copiar backups já criptografados ao Google Drive.">
+  <title>Arca Backup — apresentação</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f4ef; color: #1a2925; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.6; }
+    a { color: #145d50; text-underline-offset: .2em; }
+    a:hover { color: #0c4037; }
+    a:focus-visible { outline: 3px solid #b76828; outline-offset: 3px; border-radius: 2px; }
+    .wrap { width: min(100% - 2rem, 70rem); margin-inline: auto; }
+    .site-header { background: #123f37; color: #fff; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.2rem; }
+    .brand { color: #fff; font-weight: 750; letter-spacing: -.025em; font-size: 1.18rem; text-decoration: none; }
+    .site-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .site-nav a { color: #fff; font-size: .95rem; }
+    .hero { padding: clamp(3rem, 8vw, 6.5rem) 0 3.5rem; border-bottom: 1px solid #d8ded7; }
+    .eyebrow { margin: 0 0 .8rem; color: #576b62; font-size: .78rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 15ch; margin: 0 0 1.25rem; font-size: clamp(2.5rem, 7vw, 5.2rem); line-height: 1.04; letter-spacing: -.055em; }
+    .lead { max-width: 42rem; margin: 0 0 1.8rem; color: #42534b; font-size: clamp(1.08rem, 2.3vw, 1.3rem); }
+    .button { display: inline-block; padding: .8rem 1.2rem; border-radius: .55rem; background: #145d50; color: #fff; font-weight: 700; text-decoration: none; }
+    .button:hover { background: #0c4037; color: #fff; }
+    .section { padding-block: 3rem; }
+    h2 { margin: 0 0 1.2rem; font-size: clamp(1.65rem, 3vw, 2.15rem); letter-spacing: -.035em; line-height: 1.2; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card { border: 1px solid #d8ded7; border-radius: .8rem; padding: 1.35rem; background: #fff; }
+    .number { display: inline-block; margin-bottom: .9rem; color: #97601f; font-size: .8rem; font-weight: 800; letter-spacing: .08em; }
+    h3 { margin: 0 0 .55rem; font-size: 1.12rem; }
+    .card p { margin: 0; color: #42534b; }
+    .notice { max-width: 70rem; margin: 0 auto 3rem; padding: 1.2rem 1.35rem; border-left: .3rem solid #a96c27; background: #eee9db; border-radius: .35rem; }
+    .notice p { margin: .35rem 0 0; }
+    footer { padding-block: 1.5rem 2rem; border-top: 1px solid #d8ded7; color: #52645a; font-size: .94rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } .header-inner { align-items: flex-start; flex-direction: column; } .hero { padding-top: 3.3rem; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-current="page">Arca Backup</a>
+      <nav class="site-nav" aria-label="Navegação principal"><a href="privacidade.html">Política de privacidade</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="titulo">
+      <p class="eyebrow">Aplicativo OAuth pessoal</p>
+      <h1 id="titulo">Uma cópia externa para o backup criptografado.</h1>
+      <p class="lead">Arca Backup é o cliente OAuth pessoal planejado para conectar o <strong>rclone</strong> ao Google Drive. Seu uso previsto é copiar para a conta Google do responsável o conjunto de backup que o <strong>Déjà Dup já criptografou</strong> no computador e, quando necessário, baixá-lo para uma restauração.</p>
+      <a class="button" href="privacidade.html">Ler a política de privacidade</a>
+    </section>
+
+    <section class="section wrap" aria-labelledby="funcionamento">
+      <h2 id="funcionamento">Como o uso foi planejado</h2>
+      <div class="grid">
+        <article class="card"><span class="number">01 · ORIGEM</span><h3>Backup local</h3><p>O Déjà Dup produz o conjunto criptografado no armazenamento local.</p></article>
+        <article class="card"><span class="number">02 · CÓPIA</span><h3>Envio ao Drive</h3><p>O rclone, autorizado pelo cliente Arca Backup, deverá copiar esse conjunto para o Google Drive pessoal.</p></article>
+        <article class="card"><span class="number">03 · RECUPERAÇÃO</span><h3>Download e restauração</h3><p>Em caso de necessidade, o conjunto remoto deverá ser baixado e usado em uma restauração com o Déjà Dup.</p></article>
+      </div>
+    </section>
+
+    <aside class="notice wrap" aria-label="Estado atual">
+      <strong>Estado atual</strong>
+      <p>A conexão OAuth, a cópia externa do conjunto e a restauração a partir dela ainda não foram validadas. Esta página apenas apresenta o uso previsto; ela não autentica usuários nem transfere arquivos.</p>
+    </aside>
+  </main>
+
+  <footer><div class="wrap"><span>Arca Backup · uso pessoal</span><a href="privacidade.html">Política de privacidade</a></div></footer>
+</body>
+</html>
